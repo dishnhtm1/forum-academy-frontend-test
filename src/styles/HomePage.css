@@ -1,0 +1,245 @@
+/* Home Page Styles */
+.home-page {
+    --section-spacing: 5rem;
+    overflow-x: hidden;
+}
+
+/* Section Styles */
+.section {
+    padding: var(--section-spacing) 0;
+    opacity: 0;
+    /* Start hidden, will be animated in */
+    position: relative;
+}
+
+.section:nth-child(odd) {
+    background-color: #f8fafc;
+}
+
+.section:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Space after Hero */
+.hero-section+.section {
+    margin-top: 0;
+}
+
+.compact-section .container {
+    max-width: 1100px;
+    padding: 2rem 1.5rem;
+}
+
+.compact-section .course-filters {
+    margin: 1.5rem 0;
+}
+
+/* Consistent section header styling */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-header h2 {
+    color: black;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    width: 80px;
+    height: 3px;
+    background: #4a90e2;
+    transform: translateX(-50%);
+}
+
+.section-header p {
+    color: #555;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Section spacing */
+.section {
+    padding: 6rem 0;
+}
+
+.section:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Add smooth scrolling for navigation */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .section-header p {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
+}
+
+/* Course Filter Styles */
+.course-filters {
+    margin-bottom: 2.5rem;
+    overflow-x: auto;
+    position: relative;
+}
+
+.tag-list {
+    white-space: nowrap;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.tag-list .inner {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tag-list .fade {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(248, 250, 252, 0),
+            rgba(248, 250, 252, 1));
+    pointer-events: none;
+    z-index: 2;
+    display: none;
+}
+
+.filter-btn.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 30px;
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn.tag .material-icons {
+    font-size: 1.25rem;
+    transition: transform 0.2s ease;
+}
+
+.filter-btn.tag:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+    transform: translateY(-2px);
+}
+
+.filter-btn.tag:hover .material-icons {
+    transform: scale(1.1);
+}
+
+.filter-btn.tag.active {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    color: white;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.25);
+}
+
+/* Testimonials Section */
+.testimonials {
+    /* background-image: linear-gradient(to bottom, rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.9)), url('/images/pattern-bg.jpg'); */
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.testimonials .section-header h2 {
+    color: white;
+}
+
+.testimonials .section-header h2::after {
+    background-color: white;
+}
+
+.testimonials .section-header p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .section-header h2 {
+        font-size: 2.25rem;
+    }
+
+    .section {
+        padding: calc(var(--section-spacing) * 0.8) 0;
+    }
+
+    .tag-list .inner {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+    }
+
+    .tag-list .fade {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-spacing: 4rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .section-header p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --section-spacing: 3rem;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+}
